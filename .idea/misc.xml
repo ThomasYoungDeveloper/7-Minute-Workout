@@ -10,9 +10,11 @@
         <entry key="..\:/Users/thoma/AndroidStudioProjects/7MinuteWorkout/app/src/main/res/drawable/item_color_accent_border_ripple_background.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/thoma/AndroidStudioProjects/7MinuteWorkout/app/src/main/res/layout/activity_excercise.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/thoma/AndroidStudioProjects/7MinuteWorkout/app/src/main/res/layout/activity_main.xml" value="0.15881458966565348" />
+        <entry key="app/src/main/res/drawable-v24/circular_progress_grey.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/activity_excercise.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2269021739130435" />
+        <entry key="app/src/main/res/layout/item_exercise_status.xml" value="0.22708333333333333" />
       </map>
     </option>
   </component>

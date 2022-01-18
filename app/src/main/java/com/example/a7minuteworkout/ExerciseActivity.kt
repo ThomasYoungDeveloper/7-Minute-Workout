@@ -9,6 +9,7 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minuteworkout.databinding.ActivityExcerciseBinding
 import java.lang.Exception
 import java.util.*
@@ -29,6 +30,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     //media player variable
     private var player: MediaPlayer? = null
+
+    private var exerciseAdapter : ExerciseStatusAdapter? = null
 
 
     // create a binding variable
@@ -56,7 +59,15 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
         setupRestView()
+        setUpExerciseStatusRecyclerView()
 
+    }
+
+    private fun setUpExerciseStatusRecyclerView(){
+        binding?.rvExerciseStatus?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        exerciseAdapter = ExerciseStatusAdapter(exerciseList!!)
+        binding?.rvExerciseStatus?.adapter = exerciseAdapter
     }
 
 
@@ -140,7 +151,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         exerciseTimer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
-                binding?.progressBarExercise?.progress = 30 - exerciseProgress
+                binding?.progressBarExercise?.progress =  - exerciseProgress
                 binding?.tvTimerExercise?.text = (30 - exerciseProgress).toString()
 
             }
@@ -152,7 +163,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 } else {
                     Toast.makeText(this@ExerciseActivity, "Workout finish", Toast.LENGTH_SHORT).show()
                 }
-                //setupExerciseView()
+                setupExerciseView()
             }
         }.start()
     }
