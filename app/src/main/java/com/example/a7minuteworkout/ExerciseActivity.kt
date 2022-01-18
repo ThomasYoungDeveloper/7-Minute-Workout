@@ -151,7 +151,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         exerciseTimer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
-                binding?.progressBarExercise?.progress =  - exerciseProgress
+                binding?.progressBarExercise?.progress = 30 - exerciseProgress
                 binding?.tvTimerExercise?.text = (30 - exerciseProgress).toString()
 
             }
@@ -163,7 +163,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 } else {
                     Toast.makeText(this@ExerciseActivity, "Workout finish", Toast.LENGTH_SHORT).show()
                 }
-                setupExerciseView()
             }
         }.start()
     }
